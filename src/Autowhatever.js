@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import createSectionIterator from 'section-iterator';
 import themeable from 'react-themeable';
@@ -135,7 +136,7 @@ export default class Autowhatever extends Component {
 
   storeItemsContainerReference = itemsContainer => {
     if (itemsContainer !== null) {
-      this.itemsContainer = itemsContainer;
+      this.itemsContainer = ReactDOM.findDOMNode(itemsContainer);
     }
   };
 
